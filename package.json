@@ -1,0 +1,22 @@
+{
+  "name": "footballstandings",
+  "version": "1.0.0",
+  "description": "Football/soccer league tables and fixtures with a few clicks",
+  "engines": {
+    "node": "6.11.2"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Philip Campos",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "git": "^0.1.5",
+    "request": "^2.83.0"
+  }
+}

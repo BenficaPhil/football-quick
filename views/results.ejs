@@ -1,0 +1,84 @@
+<% include partials/header %>
+
+<div class="container-fluid">
+    <div class="row justify-content-center" id="content">
+        <div class="col-md-6">
+            <table class="table table-responsive animated fadeIn">
+                <thead>
+                    <tr class="tablehead bg-dark">
+                      <th>Rank</th>
+                      <th></th>
+                      <th class="team-table">Team</th>
+                      <th>Pts</th>
+                      <th>MP</th>
+                      <th>W</th>
+                      <th>D</th>
+                      <th>L</th>
+                      <th>GF</th>
+                      <th>GA</th>
+                      <th>GD</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+<% standingsList.standing.forEach(function(team) { %>
+    <tr>
+        <td><%= team["position"] %></td>
+        <td class="min"><img class="crest" src="<%= team["crestURI"] %>"></td>
+        <td class="team-table bold"><%= team["teamName"] %></td>
+        <td class="bold"><%= team["points"] %></td>
+        <td><%= team["playedGames"] %></td>
+        <td><%= team["wins"] %></td>
+        <td><%= team["draws"] %></td>
+        <td><%= team["losses"] %></td>
+        <td><%= team["goals"] %></td>
+        <td><%= team["goalsAgainst"] %></td>
+        <td><%= team["goalDifference"] %></td>
+    </tr>
+<% }); %>
+
+<% include partials/midltfix %>
+
+<% fixtureList.fixtures.forEach(function(match) { %>
+    <% if(match["matchday"] === standingsList.matchday) { %>
+        <% var date = match["date"]; %>
+        <% var day = date.substr(5, 5); %>
+        <tr>
+            <td class="date"><%= day %></td>
+            <td class="home-team"><%= match["homeTeamName"] %></td>
+            <% if(match["result"]["goalsHomeTeam"] == null) { %>
+                <% var date = match["date"]; %>
+                <% var hours = date.substr(11, 5); %>
+                <td class="score table-info"><%= hours %></td>
+            <% } else { %>
+                <td class="score table-info"><%= match["result"]["goalsHomeTeam"] %> - <%= match["result"]["goalsAwayTeam"] %></td>
+            <% } %>
+            <td class="away-team"><%= match["awayTeamName"] %></td>
+        </tr>
+    <% } %>
+<% }); %>
+
+<% include partials/midfixts %>
+
+<% fixtureList.fixtures.forEach(function(match) { %>
+    <% if(match["matchday"] === standingsList.matchday + 1) { %>
+        <% var date = match["date"]; %>
+        <% var day = date.substr(5, 5); %>
+        <% var hours = date.substr(11, 5); %>
+        <tr>
+            <td class="date"><%= day %></td>
+            <td class="home-team"><%= match["homeTeamName"] %></td>
+            <td class="score table-info"><%= hours %></td>
+            <td class="away-team"><%= match["awayTeamName"] %></td>
+        </tr>
+    <% } %>
+<% }); %>
+
+            </table>
+        </div> <!-- .col -->
+      </div> <!-- .row -->
+    </div> <!-- .col -->
+  </div> <!-- .row -->
+</div> <!-- .container-fluid -->
+
+<% include partials/footer %>

@@ -1,0 +1,135 @@
+body {
+	background-color: #f8f9fa!important;
+}
+
+a.navbar-brand {
+	color: black;
+}
+
+a.nav-item.nav-link:hover {
+	color: #36454f;
+	background-color: rgba(255, 233, 170, 0.8);
+	transition: 0.5s;
+}
+
+th, td {
+	text-align: center;
+}
+
+td > img {
+	display: block;
+	margin: 0 auto;
+}
+
+footer {
+	margin-top: 25px;
+	padding-top: 14px;
+	padding-bottom: 6px;
+	text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #36454f;
+	font-weight: bold;
+}
+
+.jumbotron {
+	color: #f8f9fa;
+	padding-top: 114px;
+	text-align: center;
+}
+
+#content {
+	padding-top: 95px;
+}
+
+.list-group {
+	min-width: 25%;
+	padding-bottom: 180px;
+}
+
+.flag {
+	width: 33px;
+	height: 22px;
+	border: 1px solid #36454f;
+}
+
+.lowertier {
+	margin-left: 50px;
+}
+
+.tablehead {
+	color: white;
+}
+
+.colspan {
+	column-span: all;
+}
+
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+
+.table td, .table th {
+	padding: .50rem .70rem;
+}
+
+.crest {
+	height: 24px;
+}
+
+.min {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.team-table {
+	text-align: left;
+	white-space: nowrap;
+}
+
+.home-team {
+	text-align: right;
+}
+
+.away-team {
+	text-align: left;
+}
+
+.date {
+	white-space: nowrap;
+}
+
+.score {
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.fb-share-button {
+	vertical-align: top;
+	display: inline;
+}
+
+.animated {
+	animation-duration: 2s;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+}
